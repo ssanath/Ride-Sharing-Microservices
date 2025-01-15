@@ -15,17 +15,19 @@ Driver-Service ----> Ride-Service ----> Payment-Service
 
 1. Eureka server for registering the three services and to generate the dynamic addresses.
 2. Postman for testing the REST API calls using GET, POST, PUT and DELETE methods.
+3. MySQL Xaamp Server for database.
 
 # Steps to run:
 
 1. Run the eureka server and open the dashboard.
-2. Run all the three services and check if they are registered in the eureka dashboard.
-3. Open Postman and type the url:
+2. Make sure you have created three databases named driver, ride and payment in your xaamp server.
+3. Run all the three services and check if they are registered in the eureka dashboard.
+4. Open Postman and type the url:
 
     http://localhost:8081/drivers/createDriver
 
     Set the method to POST
-4. Add two driver entities in JSON format, for example:
+5. Add two driver entities in JSON format, for example:
 
     {
     "id": 1,
@@ -43,12 +45,12 @@ Driver-Service ----> Ride-Service ----> Payment-Service
    "availability": false
    }
 
-5. Next type the url:
+6. Next type the url:
 
     http://localhost:8082/rides/createRide
 
     Set the method to POST
-6. Add one ride entity in JSON format, for example:
+7. Add one ride entity in JSON format, for example:
 
    {
    "id": 1,
@@ -61,13 +63,13 @@ Driver-Service ----> Ride-Service ----> Payment-Service
    "updatedAt": "2025-01-14T11:15:30"
    }
 
-7. Using the driverId, ride-service will fetch the driver details from the driver-service using REST API calls and displays the complete details.
-8. Next type the url:
+8. Using the driverId, ride-service will fetch the driver details from the driver-service using REST API calls and displays the complete details.
+9. Next type the url:
 
     http://localhost:8083/payments/createPayment
 
     Set the method to POST
-9. Add one payment entity in JSON format, for example:
+10. Add one payment entity in JSON format, for example:
 
    {
    "id": 3,
@@ -77,5 +79,5 @@ Driver-Service ----> Ride-Service ----> Payment-Service
    "paymentMethod": "Credit Card",
    "createdAt": "2025-01-14T10:30:45"
    }
-10. Using the rideId, payment-service will fetch the ride status from the ride-service using REST API calls and displays the complete payment details.
-11. Download the demo video: Ride_Sharing_System_Demo.mp4
+11. Using the rideId, payment-service will fetch the ride status from the ride-service using REST API calls and displays the complete payment details.
+12. Download the demo video: Ride_Sharing_System_Demo.mp4
